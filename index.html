@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
   <div class="buttonContainer">
     <div id="increment">
       <button id="incrementButton">Increment</button>
@@ -21,8 +22,11 @@
   </div>
   <div class="container">
 
+
     <div id="androidPhonePicture">
+      <h1>AndroidPhone</h1>
       <input type="file" id="inputFileToLoad" class="choosePicture" onChange="loadImageFileAsURL()">
+
     </div>
 
     <div id="androidTabletPicture">
@@ -38,11 +42,12 @@
     </div>
 
     <div class="pictureContainer"></div>
-  </div>
 
+  </div>
   <script>
     const incrementButton = document.querySelector('#incrementButton');
     const decrementButton = document.querySelector('#decrementButton');
+    const androidPicture = document.querySelector('.androidPhonePicture');
 
     incrementButton.addEventListener('click', (e) => {
       console.log(e);
@@ -64,7 +69,7 @@
           fileReader.onload = function (fileLoadedEvent) {
             var imageLoaded = document.createElement("img");
             imageLoaded.src = fileLoadedEvent.target.result;
-            document.body.appendChild(imageLoaded);
+            document.body.appendChild(androidPicture);
           };
           fileReader.readAsDataURL(fileToLoad);
         }
