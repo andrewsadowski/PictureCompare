@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <script src="index.js" />
+  <title>pictureCompare</title>
+</head>
+
+<body>
+
+  <div class="buttonContainer">
+    <div id="increment">
+      <button id="incrementButton">Increment</button>
+    </div>
+    <div id="decrement">
+      <button id="decrementButton">Decrement</button>
+    </div>
+  </div>
+  <div class="container">
+
+
+    <div id="androidPhonePicture">
+      <h1>AndroidPhone</h1>
+      <input type="file" id="inputFileToLoad" class="choosePicture" onChange="loadImageFileAsURL()">
+
+    </div>
+
+    <div id="androidTabletPicture">
+      <input type="file" id="inputFileToLoad" class="choosePicture" onChange="loadImageFileAsURL()">
+    </div>
+
+    <div id="iphonePicture">
+      <input type="file" id="inputFileToLoad" class="choosePicture" onChange="loadImageFileAsURL()">
+    </div>
+
+    <div id="iPadPicture">
+      <input type="file" id="inputFileToLoad" class="choosePicture" onChange="loadImageFileAsURL()">
+    </div>
+
+    <div class="pictureContainer"></div>
+
+  </div>
+  <script>
+    const incrementButton = document.querySelector('#incrementButton');
+    const decrementButton = document.querySelector('#decrementButton');
+    const androidPicture = document.querySelector('.androidPhonePicture');
+
+    incrementButton.addEventListener('click', (e) => {
+      console.log(e);
+    });
+
+    decrementButton.addEventListener('click', (e) => {
+      console.log(e);
+    });
+
+    function loadImageFileAsURL() {
+      var filesSelected = document.getElementById(
+        "inputFileToLoad"
+      ).files;
+      if (filesSelected.length > 0) {
+        var fileToLoad = filesSelected[0];
+
+        if (fileToLoad.type.match("image.*")) {
+          var fileReader = new FileReader();
+          fileReader.onload = function (fileLoadedEvent) {
+            var imageLoaded = document.createElement("img");
+            imageLoaded.src = fileLoadedEvent.target.result;
+            document.body.appendChild(androidPicture);
+          };
+          fileReader.readAsDataURL(fileToLoad);
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
