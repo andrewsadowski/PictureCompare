@@ -54,13 +54,14 @@
     const incrementButton = document.querySelector('#incrementButton');
     const decrementButton = document.querySelector('#decrementButton');
     const androidPicture = document.querySelector('.androidPhonePicture');
+    const allImages = document.querySelectorAll('img');
 
     incrementButton.addEventListener('click', (e) => {
-      console.log(e);
+      console.log(allImages);
     });
 
     decrementButton.addEventListener('click', (e) => {
-      console.log(e);
+      console.log(allImages);
     });
 
     function readURLAndroid(input) {

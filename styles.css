@@ -15,7 +15,7 @@
 .individualContainer {
   border: solid 1px black;
   align-content: center;
-  border-bottom: 100px;
+  border-bottom: solid 1px black;
 }
 
 img {
