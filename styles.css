@@ -10,7 +10,6 @@
   flex-direction: row;
   justify-content: center;
   align-content: space-between;
-  border: solid 1px black;
 }
 
 .individualContainer {
